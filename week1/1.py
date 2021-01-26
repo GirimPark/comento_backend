@@ -907,3 +907,155 @@ print(cal1.add(3))
 print(cal1.add(4))
 print(cal2.add(3))
 print(cal2.add(7))
+#
+
+
+class FourCal:
+    def __init__(self, first, second):  # 파이썬 생성자는 __init__
+        self.first = first
+        self.second = second
+
+    def setdata(self, first, second):
+        self.first = first
+        self.second = second
+        #   파이썬 메서드의 첫 번재 매개변수는 관례적으로 self를 사용한다. self == 클래스의 인스턴스
+
+    def add(self):
+        result = self.first+self.second
+        return result
+
+    def mul(self):
+        result = self.first*self.second
+        return result
+
+    def sub(self):
+        result = self.first-self.second
+        return result
+
+    def div(self):
+        result = self.first/self.second
+        return result
+
+
+# a = FourCal()
+# b = FourCal()
+# a.setdata(4, 2)
+# b.setdata(3, 8)
+
+# print(a.add())
+# print(a.mul())
+# print(a.sub())
+# print(a.div())
+
+a = FourCal(4, 2)
+print(a.first)
+#
+
+
+class MoreFourCal(FourCal):  # 상속
+    def pow(self):
+        result = self.first**self.second
+        return result
+
+
+a = MoreFourCal(4, 2)
+print(a.first)
+print(a.add())
+print(a.pow())
+#
+
+
+class SafeFourCal(FourCal):
+    def div(self):
+        if self.second == 0:
+            return 0
+        else:
+            return self.first/self.second
+
+
+a = SafeFourCal(4, 0)
+print(a.div())
+#
+
+
+class Family:
+    lastname = '김'
+
+
+print(Family.lastname)
+
+a = Family()
+print(a.lastname)
+
+Family.lastname = '박'
+print(a.lastname)
+
+#   모듈: 1_module.py
+
+#   패키지: game
+
+# game/sound/echo.py/echo_test()에서
+# from으로 경로 접근 후에 echo_test()사용은 가능.
+# 1. import game까지 하고 echo_test()로 접근하는 경우: game디렉터리의 모듈, game디렉터리의 __init__.py에 정의한 것만 사용 가능
+# 2. import로 echo_test()까지 접근하는 경우: from없이 import만 사용할 때에는 마지막이 모듈/패키지여야 함
+
+# __init__.py는 디렉터리가 패키지의 일부임을 알려준다.
+# from game.sound import *: 해당 디렉터리 __init__.py에 __all__변수를 정의(마지막 항목이 패키지인 경우 해당)
+
+
+#   예외 처리
+
+try:
+    4/0
+except ZeroDivisionError as e:
+    print(e)
+#
+try:
+    a = [1, 2]
+    print(a[3])
+    4/0
+except ZeroDivisionError as e:
+    print(e)
+except IndexError as e:
+    print(e)
+#
+try:
+    a = [1, 2]
+    print(a[3])
+    4/0
+except (ZeroDivisionError, IndexError) as e:
+    print(e)
+#
+
+
+class Bird:
+    def fly(self):
+        raise NotImplementedError
+
+
+class Eagle(Bird):
+    def fly(self):
+        print("very fast")
+
+
+eagle = Eagle()
+eagle.fly()
+#
+
+
+class MyError(Exception):
+    def __str__(self):
+        return "허용되지 않는 별명입니다."
+
+
+def say_nick(nick):
+    if nick == "바보":
+        raise MyError()
+    print(nick)
+
+
+try:
+    say_nick("천사")
+    say_nick("바보")
+except MyError as e:
+    print(e)
