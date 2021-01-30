@@ -345,9 +345,9 @@ else:
     print("홀수")
 
 #   Q3
-id = '881120-1068234'
-print(id[:6])
-print(id[7:])
+identify = '881120-1068234'
+print(identify[:6])
+print(identify[7:])
 
 #   Q4
 pin = '881120-1068234'
@@ -557,12 +557,12 @@ print(result)
 
 #   Q2
 num = 1
-sum = 0
+total = 0
 while num <= 1000:
     if num % 3 == 0:
-        sum += num
+        total += num
     num += 1
-print(sum)
+print(total)
 
 #   Q3
 num = 1
@@ -577,10 +577,10 @@ for i in range(1, 101):
 
 #   Q5
 score = [70, 60, 55, 75, 95, 90, 80, 80, 85, 100]
-sum = 0
+total = 0
 for i in score:
-    sum += i
-print(sum/len(score))
+    total += i
+print(total/len(score))
 
 #   Q6
 numbers = [1, 2, 3, 4, 5]
@@ -805,10 +805,10 @@ def is_odd(x): return "짝수" if x % 2 == 0 else "홀수"
 
 
 def mean(*args):
-    sum = 0
+    total = 0
     for i in args:
-        sum += i
-    return sum/len(args)
+        total += i
+    return total/len(args)
 
 
 #   Q3
@@ -1059,3 +1059,6 @@ try:
     say_nick("바보")
 except MyError as e:
     print(e)
+
+
+#   5, 6 > 1_2.py
