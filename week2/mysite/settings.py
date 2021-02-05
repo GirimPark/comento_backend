@@ -18,7 +18,7 @@ from django.core.exceptions import ImproperlyConfigured
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 secret_file = os.path.join(
-    BASE_DIR, '/Microsoft VS Code/bin/comento_backend/secrets.json')
+    BASE_DIR, '/VSCode/bin/comento_backend/week2/secrets.json')
 
 with open(secret_file, 'r') as f:  # open as로 secret.json을 열어줍니다.
     secrets = json.loads(f.read())

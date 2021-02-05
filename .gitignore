@@ -1,4 +1,5 @@
-secrets.json
+week2/secrets.json
+week3/secrets.json
 __pycache__/
 venv/
 .vscode
