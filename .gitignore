@@ -1,5 +1,14 @@
 week2/secrets.json
 week3/secrets.json
+week4/secrets.json
+
 __pycache__/
-venv/
+
 .vscode
+week2/.vscode
+week3/.vscode
+week4/.vscode
+
+week2/myvenv
+week3/myvenv
+week4/myvenv
