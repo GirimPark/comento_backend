@@ -4,6 +4,7 @@ from django.utils import timezone
 
 
 class Profile(models.Model):
+    user = models.ForeignKey("User", related_name="user_id", on_delete=models.CASCADE, db_column="user_id")
     user_name = models.CharField(max_length=30, default="익명")
     status_message = models.CharField(max_length=30, default="")
     photo = models.URLField()
