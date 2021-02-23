@@ -15,3 +15,9 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.name
+
+class PhotoInfo(models.Model):
+    # profile_id = Forigen key
+    # photo_url = models.ImageField() # option 찾아보시고 추가하면 좋을 것 같습니다.
+    # created_at = models.DataTimeField()
+    # is_deleted = models.BooleanField(dafault=False)
